@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User List</title>
+</head>
+<body>
+
+<h2>Registered Users</h2>
+
+<ul id="list" >
+</ul>
+
+<script>
+let users = JSON.parse(localStorage.getItem("users")) || [];
+
+let list = document.getElementById("list");
+
+users.map(user => {
+    let li = document.createElement("li");
+    li.textContent = user.name + " - " + user.email;
+    list.appendChild(li);
+});
+</script>
+
+</body>
+</html>
