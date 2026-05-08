@@ -14,8 +14,9 @@
 </form>
 
 <script>
-let users = [];
 
+ 
+let users = JSON.parse(localStorage.getItem("users")) || [];
 
 document.getElementById("form").addEventListener("submit", function(e){
     e.preventDefault();
